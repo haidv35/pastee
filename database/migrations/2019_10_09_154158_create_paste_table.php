@@ -15,13 +15,13 @@ class CreatePasteTable extends Migration
     {
         Schema::create('paste', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned()->nullable(false);
-            $table->string('title');
-            $table->text('content');
-            $table->string('syntax');
-            $table->dateTime('date_added');
-            $table->dateTime('date_expires');
-            $table->integer('views');
+            $table->bigInteger('user_id')->unsigned()->nullable(true);
+            $table->string('title')->nullable(false);
+            $table->text('content')->nullable(false);
+            $table->string('syntax')->nullable(false);
+            $table->dateTime('date_added')->nullable(false);
+            $table->dateTime('date_expires')->nullable(false);
+            $table->integer('views')->nullable(false);
         });
     }
 
